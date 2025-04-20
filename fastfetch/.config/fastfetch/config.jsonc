@@ -6,8 +6,8 @@
     "padding": {
       "left": 4,
       "right": 6,
-      "top": 1,
-    },
+      "top": 1
+    }
   },
   "display": {
     "constants": [
@@ -18,105 +18,105 @@
       "\u001b[38;2;166;227;161m", // Green
       "\u001b[38;2;148;226;213m", // Teal
       "\u001b[38;2;137;180;250m", // Blue
-      "\u001b[38;2;180;190;254m", // Lavender
-    ],
+      "\u001b[38;2;180;190;254m" // Lavender
+    ]
   },
   "modules": [
     {
       "type": "title",
-      "format": "{$2}───────────{$3}────────── {$1}{user-name}{$5}@{$1}{host-name} {$6}──────────{$7}───────────",
+      "format": "{$2}───────────{$3}────────── {$1}{user-name}{$5}@{$1}{host-name} {$6}──────────{$7}───────────"
     },
     {
       "type": "custom",
-      "format": "{$2}{$5}",
+      "format": "{$2}{$5}"
     },
     {
       "type": "os",
       "key": "{$7}\ue7d9 ",
-      "format": "{pretty-name}",
+      "format": "{pretty-name}"
     },
     {
       "type": "kernel",
       "key": "{$7}\uf17c ",
-      "format": "{sysname} v{release}",
+      "format": "{sysname} v{release}"
     },
     {
       "type": "packages",
       "key": "{$7}\ued95 ",
-      "format": "{all} total, {rpm} rpm, {flatpak-system} flatpak",
+      "format": "{all} total, {rpm} rpm, {flatpak-system} flatpak"
     },
     {
       "type": "terminal",
       "key": "{$7}\ue795 ",
-      "format": "{pretty-name} v{version}",
+      "format": "{pretty-name} v{version}"
     },
     {
       "type": "shell",
       "key": "{$7}\uebca ",
-      "format": "{pretty-name} v{version}",
+      "format": "{pretty-name} v{version}"
     },
     {
       "type": "custom",
-      "format": "{$1}",
+      "format": "{$1}"
     },
     {
       "type": "host",
       "key": "{$5}\uf109 ",
-      "format": "{vendor} {family}",
+      "format": "{vendor} {family}"
     },
     {
       "type": "cpu",
       "key": "{$5}\uf4bc ",
-      "format": "{name}",
+      "format": "{name}"
     },
     {
       "type": "battery",
       "key": "{$5}\uf242 ",
-      "format": "{capacity} ({status})",
+      "format": "{capacity} ({status})"
     },
     {
       "type": "uptime",
-      "key": "{$5}\uf017 ",
+      "key": "{$5}\uf017 "
     },
     {
       "type": "disk",
       "key": "{$5}\uf0a0 ",
-      "format": "{size-used} / {size-total} ({size-percentage})",
+      "format": "{size-used} / {size-total} ({size-percentage})"
     },
     {
       "type": "custom",
-      "format": "{$1}",
+      "format": "{$1}"
     },
     {
       "type": "de",
       "key": "{$8}\uf332 ",
-      "format": "{pretty-name} v{version}",
+      "format": "{pretty-name} v{version}"
     },
     {
       "type": "wm",
       "key": "{$8}\uf2d0 ",
-      "format": "{pretty-name} ({protocol-name})",
+      "format": "{pretty-name} ({protocol-name})"
     },
     {
       "type": "wmtheme",
-      "key": "{$8}\uf1fc ",
+      "key": "{$8}\uf1fc "
     },
     {
       "type": "terminalfont",
-      "key": "{$8}\uf031 ",
+      "key": "{$8}\uf031 "
     },
     {
       "type": "media",
       "key": "{$8}\uf001 ",
-      "format": "{title} {$8}by{$1} {artist}",
+      "format": "{title} {$8}by{$1} {artist}"
     },
     {
       "type": "custom",
-      "format": "{$1}",
+      "format": "{$1}"
     },
     {
       "type": "custom",
-      "format": "{$2}──────────{$3}──────────{$4}──────────{$5}──────────{$6}──────────{$7}──────────",
-    },
-  ],
+      "format": "{$2}──────────{$3}──────────{$4}──────────{$5}──────────{$6}──────────{$7}──────────"
+    }
+  ]
 }
