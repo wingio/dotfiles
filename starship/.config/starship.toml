@@ -50,7 +50,10 @@ truncation_length = 4
 "Desktop" = "󰍹 "
 "Documents" = " "
 "Downloads" = " "
+"Music" = " "
+"Pictures" = " "
 "Projects" = " "
+"Videos" = "󰿏 "
 
 # Git
 
