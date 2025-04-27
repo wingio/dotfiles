@@ -1,0 +1,74 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "small",
+    "padding": {
+      "left": 4,
+      "right": 6,
+      "top": 1
+    }
+  },
+  "display": {
+    "constants": [
+      "\u001b[0m", // Reset
+      "\u001b[38;2;243;139;168m", // Red
+      "\u001b[38;2;250;179;135m", // Peach
+      "\u001b[38;2;249;226;175m", // Yellow
+      "\u001b[38;2;166;227;161m", // Green
+      "\u001b[38;2;148;226;213m", // Teal
+      "\u001b[38;2;137;180;250m", // Blue
+      "\u001b[38;2;180;190;254m", // Lavender
+
+      "\u001b[1;30m", // ANSI Black
+      "\u001b[1;37m", // ANSI White
+      "\u001b[1;31m", // ANSI Red
+      "\u001b[1;32m", // ANSI Green
+      "\u001b[1;33m", // ANSI Yellow
+      "\u001b[1;34m", // ANSI Blue
+      "\u001b[1;35m", // ANSI Magenta
+      "\u001b[1;36m" // ANSI Cyan
+    ]
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "title",
+      "format": "{$2}────────{$3}─────── {$1}{user-name}{$5}@{$1}{host-name} {$6}───────{$7}────────"
+    },
+    {
+      "type": "os",
+      "key": "{$7} ",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "weather",
+      "key": "{$7} ",
+      "outputFormat": "%t+-+%C&u"
+    },
+    {
+      "type": "shell",
+      "key": "{$7} ",
+      "format": "{pretty-name} v{version}"
+    },
+    {
+      "type": "uptime",
+      "key": "{$7} "
+    },
+    {
+      "type": "disk",
+      "key": "{$7} ",
+      "format": "{size-used} / {size-total} ({size-percentage})"
+    },
+    {
+      "type": "custom",
+      "format": "{$2}────────{$3}──────  {$9} {$10} {$11} {$12}  {$13} {$14} {$15} {$16}  {$6}──────{$7}────────"
+    }
+  ]
+}

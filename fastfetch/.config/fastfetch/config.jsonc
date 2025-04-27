@@ -18,7 +18,16 @@
       "\u001b[38;2;166;227;161m", // Green
       "\u001b[38;2;148;226;213m", // Teal
       "\u001b[38;2;137;180;250m", // Blue
-      "\u001b[38;2;180;190;254m" // Lavender
+      "\u001b[38;2;180;190;254m", // Lavender
+
+      "\u001b[1;30m", // ANSI Black
+      "\u001b[1;37m", // ANSI White
+      "\u001b[1;31m", // ANSI Red
+      "\u001b[1;32m", // ANSI Green
+      "\u001b[1;33m", // ANSI Yellow
+      "\u001b[1;34m", // ANSI Blue
+      "\u001b[1;35m", // ANSI Magenta
+      "\u001b[1;36m"  // ANSI Cyan
     ]
   },
   "modules": [
@@ -32,27 +41,27 @@
     },
     {
       "type": "os",
-      "key": "{$7}\ue7d9 ",
+      "key": "{$7} ",
       "format": "{pretty-name}"
     },
     {
       "type": "kernel",
-      "key": "{$7}\uf17c ",
+      "key": "{$7} ",
       "format": "{sysname} v{release}"
     },
     {
       "type": "packages",
-      "key": "{$7}\ued95 ",
+      "key": "{$7} ",
       "format": "{all} total, {rpm} rpm, {flatpak-system} flatpak"
     },
     {
       "type": "terminal",
-      "key": "{$7}\ue795 ",
+      "key": "{$7} ",
       "format": "{pretty-name} v{version}"
     },
     {
       "type": "shell",
-      "key": "{$7}\uebca ",
+      "key": "{$7} ",
       "format": "{pretty-name} v{version}"
     },
     {
@@ -61,26 +70,26 @@
     },
     {
       "type": "host",
-      "key": "{$5}\uf109 ",
+      "key": "{$5} ",
       "format": "{vendor} {family}"
     },
     {
       "type": "cpu",
-      "key": "{$5}\uf4bc ",
+      "key": "{$5} ",
       "format": "{name}"
     },
     {
       "type": "battery",
-      "key": "{$5}\uf242 ",
+      "key": "{$5} ",
       "format": "{capacity} ({status})"
     },
     {
       "type": "uptime",
-      "key": "{$5}\uf017 "
+      "key": "{$5} "
     },
     {
       "type": "disk",
-      "key": "{$5}\uf0a0 ",
+      "key": "{$5} ",
       "format": "{size-used} / {size-total} ({size-percentage})"
     },
     {
@@ -94,20 +103,20 @@
     },
     {
       "type": "wm",
-      "key": "{$8}\uf2d0 ",
+      "key": "{$8} ",
       "format": "{pretty-name} ({protocol-name})"
     },
     {
       "type": "wmtheme",
-      "key": "{$8}\uf1fc "
+      "key": "{$8} "
     },
     {
       "type": "terminalfont",
-      "key": "{$8}\uf031 "
+      "key": "{$8} "
     },
     {
       "type": "media",
-      "key": "{$8}\uf001 ",
+      "key": "{$8} ",
       "format": "{title} {$8}by{$1} {artist}"
     },
     {
@@ -116,7 +125,11 @@
     },
     {
       "type": "custom",
-      "format": "{$2}──────────{$3}──────────{$4}──────────{$5}──────────{$6}──────────{$7}──────────"
+      "format": "{$2}──────────{$3}──────────  {$9} {$10} {$11} {$12}  {$13} {$14} {$15} {$16}  {$6}──────────{$7}──────────"
+    },
+    {
+      "type": "custom",
+      "format": "                                            "
     }
   ]
 }
