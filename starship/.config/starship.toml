@@ -2,96 +2,44 @@
 
 palette = "catppuccin_mocha"
 
-format = """
-[](surface0)\
-[ ](bg:surface0)\
-$os\
-$username\
-$hostname\
-[](fg:surface0 bg:surface1)\
-$directory\
-[](fg:surface1)\
-$package\
-$gradle\
-$java\
-$nodejs\
-$python\
-$rust\
-$c\
-$cmake\
-$go\
-$kotlin\
-$fill\
-$git_branch\
-$git_status\
-$cmd_duration\
-$time
-$linebreak$character"""
+format = """$directory $git_branch$git_status $package $linebreak
+$character\
+"""
 
 # Prompt Components
 
 [character]
 format = "[ ](fg:mauve)"
 error_symbol = "[ ](fg:red)"
-
-[fill]
-symbol = "─"
-style = "surface0"
-
-[os]
-disabled = false
-style = "bg:surface0 fg:blue"
-
-[username]
-show_always = true
-style_user = "bg:surface0 fg:text"
-format = "[ $user]($style)"
-
-[hostname]
-ssh_only = false
-style = "bg:surface0 fg:text"
-format = "[@](fg:blue bg:surface0)[$hostname ]($style)"
-
-[cmd_duration]
-style = "bold bg:surface1 fg:text"
-format = "[](surface1)[ 󱎫 $duration ]($style)[](surface1)"
-
-[time]
-disabled = false
-time_format = "%l:%M%P"
-style = "bold bg:surface0 fg:text"
-format = "[](surface0)[ $time ]($style)[](surface0)"
+success_symbol = "[ ](fg:green)"
 
 # Directory
 
 [directory]
 read_only = "󰌾 "
-style = "bg:surface1 fg:text"
-format = "[ $path ]($style)[$read_only](bg:surface1 fg:red)"
+read_only_style = "fg:red"
+style = "text"
+format = "[$read_only]($read_only_style)[󰉖 $path]($style)"
 truncation_length = 4
-
-[directory.substitutions]
-"Desktop" = "󰍹 "
-"Documents" = " "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-"Projects" = " "
-"Videos" = "󰿏 "
 
 # Git
 
 [git_branch]
-style = "bold bg:peach fg:crust"
-format = "[](peach)[ $symbol$branch(:$remote_branch) ]($style)"
+style = "bg:surface0 fg:peach"
+format = "[](surface0)[$symbol$branch(:$remote_branch)]($style)"
 symbol = " "
 
 [git_status]
-style = "bold bg:peach fg:crust"
-format = "[$all_status]($style)[](peach)"
-modified = "! "
-staged = "+$count "
-deleted = "-$count "
+style = "bg:surface0 fg:peach"
+format = "[$modified]($style)[](surface0) "
+modified = " !"
+
+# Contexts
+
+[package]
+symbol = " "
+style = "bg:surface0 fg:green"
+format = "[](surface0)[$symbol$version]($style)[](surface0)"
 
 # Color Palette
 [palettes.catppuccin_mocha]
@@ -121,74 +69,3 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
-
-# Contexts
-
-[package]
-symbol = "󰏗 "
-style = "bold bg:surface1 fg:text"
-format = "[](surface1)[ $symbol$version ]($style)[](surface1)"
-
-# Languages
-
-[c]
-symbol = " "
-style = "bg:blue fg:surface0"
-format = "[](blue)[ $symbol$version ]($style)[](blue)"
-
-[cmake]
-symbol = " "
-style = "bg:sky fg:surface0"
-format = "[](sky)[ $symbol$version ]($style)[](sky)"
-
-[dart]
-symbol = " "
-style = "bg:blue fg:surface0"
-format = "[](blue)[ $symbol$version ]($style)[](blue)"
-
-[golang]
-symbol = " "
-style = "bold bg:sapphire fg:surface0"
-format = "[](sapphire)[ $symbol$version ]($style)[](sapphire)"
-
-[java]
-symbol = " "
-style = "bg:red fg:surface0"
-format = "[](red)[ $symbol$version ]($style)[](red)"
-
-[kotlin]
-symbol = " "
-style = "bg:blue fg:surface0"
-format = "[](blue)[ $symbol ]($style)[](blue)"
-
-[nodejs]
-symbol = " "
-style = "bg:green fg:surface0"
-format = "[](green)[ $symbol$version ]($style)[](green)"
-
-[python]
-symbol = " "
-style = "bg:yellow fg:surface0"
-format = "[](yellow)[ $symbol$version ]($style)[](yellow)"
-
-[rust]
-symbol = "󱘗 "
-style = "bg:red fg:surface0"
-format = "[](red)[ $symbol$version ]($style)[](red)"
-
-[gradle]
-symbol = " "
-style = "bold bg:sapphire fg:surface0"
-format = "[](sapphire)[ $symbol$version ]($style)[](sapphire)"
-
-[os.symbols]
-Android = " "
-Fedora = " "
-Linux = " "
-Macos = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-Unknown = " "
-Windows = "󰍲 "
