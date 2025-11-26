@@ -31,7 +31,7 @@ symbol = " "
 
 [git_status]
 style = "bg:surface0 fg:peach"
-format = "[$modified]($style)[](surface0) "
+format = "[$modified]($style)[](surface0)"
 modified = " !"
 
 # Contexts
