@@ -44,13 +44,8 @@
     },
     {
       "type": "os",
-      "key": "{$7} ",
+      "key": "{$7}󰣇 ",
       "format": "{pretty-name}"
-    },
-    {
-      "type": "weather",
-      "key": "{$7} ",
-      "outputFormat": "%t+-+%C&u"
     },
     {
       "type": "shell",
@@ -64,7 +59,7 @@
     {
       "type": "disk",
       "key": "{$7} ",
-      "format": "{size-used} / {size-total} ({size-percentage})"
+      "format": "{name} ({filesystem}) - {size-used} / {size-total} ({size-percentage})"
     },
     {
       "type": "custom",
