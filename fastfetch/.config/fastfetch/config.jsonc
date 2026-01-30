@@ -11,126 +11,168 @@
     }
   },
   "display": {
+    "separator": " ",
     "constants": [
-      "\u001b[0m", // Reset
-      "\u001b[38;2;243;139;168m", // Red
-      "\u001b[38;2;250;179;135m", // Peach
-      "\u001b[38;2;249;226;175m", // Yellow
-      "\u001b[38;2;166;227;161m", // Green
-      "\u001b[38;2;148;226;213m", // Teal
-      "\u001b[38;2;137;180;250m", // Blue
-      "\u001b[38;2;180;190;254m", // Lavender
+      "\u001b[0m", // Reset {$1}
+      "\u001b[38;2;243;139;168m", // Red {$2}
+      "\u001b[38;2;250;179;135m", // Peach {$3}
+      "\u001b[38;2;249;226;175m", // Yellow {$4}
+      "\u001b[38;2;166;227;161m", // Green {$5}
+      "\u001b[38;2;148;226;213m", // Teal {$6}
+      "\u001b[38;2;137;180;250m", // Blue {$7}
+      "\u001b[38;2;180;190;254m", // Lavender {$8}
 
-      "\u001b[1;30m", // ANSI Black
-      "\u001b[1;37m", // ANSI White
-      "\u001b[1;31m", // ANSI Red
-      "\u001b[1;32m", // ANSI Green
-      "\u001b[1;33m", // ANSI Yellow
-      "\u001b[1;34m", // ANSI Blue
-      "\u001b[1;35m", // ANSI Magenta
-      "\u001b[1;36m"  // ANSI Cyan
+      "\u001b[1;30m", // ANSI Black {$9}
+      "\u001b[1;37m", // ANSI White {$10}
+      "\u001b[1;31m", // ANSI Red {$11}
+      "\u001b[1;32m", // ANSI Green {$12}
+      "\u001b[1;33m", // ANSI Yellow {$13}
+      "\u001b[1;34m", // ANSI Blue {$14}
+      "\u001b[1;35m", // ANSI Magenta {$15}
+      "\u001b[1;36m" // ANSI Cyan {$16}
     ]
   },
   "modules": [
+    // Software Info
     {
       "type": "title",
-      "format": "{$2}───────────{$3}────────── {$1}{user-name}{$5}@{$1}{host-name} {$6}──────────{$7}───────────"
-    },
-    {
-      "type": "custom",
-      "format": "{$2}{$5}"
+      "format": "{$7} {user-name}"
     },
     {
       "type": "os",
-      "key": "{$7}󰣇 ",
+      "key": "{$7}├─  󰣇  {$1}OS:",
       "format": "{pretty-name}"
     },
     {
       "type": "kernel",
-      "key": "{$7} ",
+      "key": "{$7}├─    {$1}Kernel:",
       "format": "{sysname} v{release}"
     },
     {
+      "type": "initsystem",
+      "key": "{$7}├─    {$1}Init:",
+      "format": "{name} v{version}"
+    },
+    {
       "type": "packages",
-      "key": "{$7} ",
-      "format": "{all} total, {pacman} pacman, {flatpak-system} flatpak"
+      "key": "{$7}├─    {$1}Packages:",
+      "format": "{all} ({$7}{pacman} 󰮯 + {$7}{flatpak-system}  {$1})"
     },
     {
       "type": "terminal",
-      "key": "{$7} ",
+      "key": "{$7}├─    {$1}Term:",
       "format": "{pretty-name} v{version}"
     },
     {
       "type": "shell",
-      "key": "{$7} ",
+      "key": "{$7}╰─    {$1}Shell:",
       "format": "{pretty-name} v{version}"
     },
+
+
+    "break",
+
+    
+    // Hardware Info
     {
-      "type": "custom",
-      "format": "{$1}"
+      "type": "title",
+      "format": "{$5}  {host-name}"
     },
     {
       "type": "host",
-      "key": "{$5} ",
-      "format": "{vendor} {family}"
+      "key": "{$5}├─    {$1}Host:",
+      "format": "{vendor} {name}"
     },
     {
       "type": "cpu",
-      "key": "{$5} ",
-      "format": "{name}"
+      "key": "{$5}├─    {$1}CPU:",
+      "format": "{cores-logical} x {name} ({$5}{freq-max}{$1})"
+    },
+    {
+      "type": "gpu",
+      "key": "{$5}├─  󰢮  {$1}GPU:",
+      "format": "{name} ({$5}{type}{$1})"
     },
     {
       "type": "battery",
-      "key": "{$5} ",
+      "key": "{$5}├─    {$1}Battery:",
       "format": "{capacity} ({status})"
     },
     {
       "type": "uptime",
-      "key": "{$5} "
+      "key": "{$5}├─    {$1}Uptime:"
     },
     {
       "type": "disk",
-      "key": "{$5} ",
-      "format": "{name} ({filesystem}) - {size-used} / {size-total} ({size-percentage})"
+      "key": "{$5}├─    {$1}Disk ({$5}{name}{$1}):",
+      "format": "{size-used} / {size-total} ({$5}{size-percentage}{$1} - {filesystem})"
     },
     {
-      "type": "custom",
-      "format": "{$1}"
+      "type": "memory",
+      "key": "{$5}├─    {$1}RAM:",
+      "format": "{used} / {total} ({$5}{percentage}{$1})"
+    },
+    {
+      "type": "swap",
+      "key": "{$5}╰─    {$1}Swap:",
+      "format": "{used} / {total} ({$5}{percentage}{$1})"
+    },
+
+
+    "break",
+    
+
+    // Customization
+    {
+      "type": "title",
+      "format": "{$8}󰸌  Customization"
     },
     {
       "type": "de",
-      "key": "{$8}\uf332 ",
+      "key": "{$8}├─    {$1}Desktop:",
       "format": "{pretty-name} v{version}"
     },
     {
       "type": "wm",
-      "key": "{$8} ",
-      "format": "{pretty-name} ({protocol-name})"
+      "key": "{$8}├─    {$1}WM:",
+      "format": "{pretty-name} ({$8}{protocol-name}{$1})"
     },
     {
       "type": "wmtheme",
-      "key": "{$8} "
+      "key": "{$8}├─    {$1}Theme:"
+    },
+    {
+      "type": "cursor",
+      "key": "{$8}├─  󰆿  {$1}Cursor:",
+      "format": "{theme} ({$8}{size}px{$1})"
+    },
+    {
+      "type": "font",
+      "key": "{$8}├─    {$1}Font:",
+      "format": "{font1}"
     },
     {
       "type": "terminalfont",
-      "key": "{$8} "
+      "key": "{$8}╰─    {$1}Font (Term):",
+      "format": "{name} ({$8}{size}pt{$1})"
     },
+
+
+    "break",
+
+
+    // Terminal Colors
     {
-      "type": "media",
-      "key": "{$8} ",
-      "format": "{title} {$8}by{$1} {artist}"
+      "type": "custom",
+      "format": "{$2}╭────{$3}────{$4}────{$5}────{$6}────{$7}────{$8}────╮"
     },
     {
       "type": "custom",
-      "format": "{$1}"
+      "format": "{$2}|  {$9}  {$10}  {$11}  {$12}    {$13}  {$14}  {$15}  {$16}  {$8}|"
     },
     {
       "type": "custom",
-      "format": "{$2}──────────{$3}──────────  {$9} {$10} {$11} {$12}  {$13} {$14} {$15} {$16}  {$6}──────────{$7}──────────"
-    },
-    {
-      "type": "custom",
-      "format": "                                            "
+      "format": "{$2}╰────{$3}────{$4}────{$5}────{$6}────{$7}────{$8}────╯"
     }
   ]
 }

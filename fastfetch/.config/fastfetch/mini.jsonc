@@ -2,13 +2,18 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "type": "small",
+    "color": {
+      "1": "blue",
+      "2": "blue"
+    },
     "padding": {
-      "left": 4,
-      "right": 6,
-      "top": 1
+      "left": 0,
+      "right": 4,
+      "top": 0
     }
   },
   "display": {
+    "separator": " ",
     "constants": [
       "\u001b[0m", // Reset
       "\u001b[38;2;243;139;168m", // Red
@@ -30,40 +35,33 @@
     ]
   },
   "modules": [
-    {
-      "type": "custom",
-      "format": ""
-    },
-    {
-      "type": "custom",
-      "format": ""
-    },
+    "break",
     {
       "type": "title",
-      "format": "{$2}────────{$3}─────── {$1}{user-name}{$5}@{$1}{host-name} {$6}───────{$7}────────"
+      "format": "{$7} {user-name}{$1}@{$7}{host-name}"
     },
     {
       "type": "os",
-      "key": "{$7}󰣇 ",
+      "key": "{$7}├─  󰣇  {$1}OS:",
       "format": "{pretty-name}"
     },
     {
       "type": "shell",
-      "key": "{$7} ",
+      "key": "{$7}├─    {$1}Shell:",
       "format": "{pretty-name} v{version}"
     },
     {
       "type": "uptime",
-      "key": "{$7} "
+      "key": "{$5}├─    {$1}Uptime:"
     },
     {
       "type": "disk",
-      "key": "{$7} ",
-      "format": "{name} ({filesystem}) - {size-used} / {size-total} ({size-percentage})"
+      "key": "{$5}├─    {$1}Disk ({$5}{name}{$1}):",
+      "format": "{size-used} / {size-total} ({$5}{size-percentage}{$1} - {filesystem})"
     },
     {
       "type": "custom",
-      "format": "{$2}────────{$3}──────  {$9} {$10} {$11} {$12}  {$13} {$14} {$15} {$16}  {$6}──────{$7}────────"
+      "format": "{$2}╰─  {$9}  {$10}  {$11}  {$12}  {$13}  {$14}  {$15}  {$16}"
     }
   ]
 }
